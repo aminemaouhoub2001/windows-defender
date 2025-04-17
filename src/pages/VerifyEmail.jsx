@@ -5,13 +5,15 @@ export default function VerifyEmail() {
   const navigate = useNavigate();
   const [status, setStatus] = useState('Verifying...');
 
+  const BASE_URL = 'https://windows-defender.onrender.com/api';
+
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     const token = params.get('token');
 
     const verify = async () => {
       try {
-        const res = await fetch(`http://localhost:5000/api/verify-email?token=${token}`);
+        const res = await fetch(`${BASE_URL}/verify-email?token=${token}`);
         const data = await res.json();
 
         if (res.ok) {

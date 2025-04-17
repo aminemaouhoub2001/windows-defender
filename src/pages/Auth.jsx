@@ -8,31 +8,40 @@ export default function Auth() {
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState('');
 
-  const handleLogin = async () => {
-    setError('');
+  const BASE_URL = 'https://windows-defender.onrender.com/api'; // 
 
-    if (!email || !password) {
-      setError('⚠️ Email and password are required.');
+const handleLogin = async () => {
+  setError('');
+
+  if (!email || !password) {
+    setError('⚠️ Email and password are required.');
+    return;
+  }
+
+  try {
+    const res = await fetch(`${BASE_URL}/signin`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ email, password }),
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+      if (data.error === 'Please verify your email before signing in.') {
+        setError('📩 Please verify your email before logging in. Check your inbox.');
+      } else {
+        setError(data.error || '❌ Login failed.');
+      }
       return;
     }
 
-    try {
-      const res = await fetch('http://localhost:5000/api/signin', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-      });
+    navigate('/generator');
+  } catch (err) {
+    setError('❌ Server error. Please try again later.');
+  }
+};
 
-      const data = await res.json();
-
-      if (!res.ok) {
-        if (data.error === 'Please verify your email before signing in.') {
-          setError('📩 Please verify your email before logging in. Check your inbox.');
-        } else {
-          setError(data.error || '❌ Login failed.');
-        }
-        return;
-      }
 
       // Optionnel : Stocker le token
       // localStorage.setItem('token', data.token);

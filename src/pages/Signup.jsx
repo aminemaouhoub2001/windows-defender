@@ -12,34 +12,36 @@ export default function Signup() {
 
   const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
+  const BASE_URL = 'https://windows-defender.onrender.com/api';
+
   const handleSignup = async () => {
     setError('');
     setSuccess('');
-
+  
     if (!fullName || !email || !password) {
       setError('⚠️ All fields are required.');
       return;
     }
-
+  
     if (!isValidEmail(email)) {
       setError('⚠️ Invalid email format.');
       return;
     }
-
+  
     try {
-      const res = await fetch('http://localhost:5000/api/signup', {
+      const res = await fetch(`${BASE_URL}/signup`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ full_name: fullName, email, password }),
       });
-
+  
       const data = await res.json();
-
+  
       if (!res.ok) {
         setError(data.error || '❌ Signup failed.');
         return;
       }
-
+  
       setSuccess('✅ Account created! Please check your email to verify.');
       setFullName('');
       setEmail('');
@@ -49,7 +51,7 @@ export default function Signup() {
       setError('❌ Unable to connect to server.');
     }
   };
-
+  
   return (
     <div className="min-h-screen bg-[#0f0f0f] text-white">
       {/* Header */}
