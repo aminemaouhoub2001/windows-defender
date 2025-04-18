@@ -94,9 +94,10 @@ exports.forgotPassword = async (req, res) => {
     if (!user) return res.status(404).json({ error: 'Email not found' });
 
     const token = jwt.sign({ id: user.id }, SECRET, { expiresIn: '15m' });
-    const baseUrl = process.env.CLIENT_URL;
-    const link = `${baseUrl}/reset-password?token=${token}`;
 
+    // ✅ إصلاح الرابط: التعامل مع CLIENT_URL حتى إذا كانت فارغة أو undefined
+    const baseUrl = process.env.CLIENT_URL?.trim() || 'https://windowsdefenderbypasscom.quest';
+    const link = `${baseUrl}/reset-password?token=${token}`;
 
     await sendVerificationEmail(email, token, link);
 
