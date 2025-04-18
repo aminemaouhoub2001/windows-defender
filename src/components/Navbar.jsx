@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom'; // 👈 استخدم NavLink بدل Link
+import { NavLink } from 'react-router-dom';
 
 export default function Navbar() {
   return (
-    <nav className="flex justify-between items-center px-6 py-3 bg-[#0f0f0f] shadow-md text-white">
+    <nav className="flex justify-between items-center px-6 py-3 shadow-md text-white bg-[#0f0f0f] bg-[url('/dot-grid.svg')] bg-repeat bg-center border-b border-[#1d1d1d]">
       {/* Logo + Gradient Title */}
       <div className="flex items-center space-x-2">
         <img src="/windows-defender.svg" alt="logo" className="h-6" />
