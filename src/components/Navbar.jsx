@@ -14,7 +14,7 @@ export default function Navbar() {
 
       {/* Navigation Links + Buttons */}
       <div className="flex items-center space-x-6 text-sm">
-        <Link to="/generator" className="hover:text-cyan-400 transition">Home</Link>
+        <Link to="/" className="hover:text-cyan-400 transition">Home</Link>
         <Link to="/techniques" className="hover:text-cyan-400 transition">Techniques</Link>
         <Link to="/resources" className="hover:text-cyan-400 transition">Resources</Link>
 
