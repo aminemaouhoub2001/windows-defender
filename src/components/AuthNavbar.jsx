@@ -11,7 +11,7 @@ export default function AuthNavbar() {
       <div className="flex items-center space-x-2">
       <img src={import.meta.env.BASE_URL + 'windows-defender.svg'} alt="logo" className="h-6" />
 
-        <span className="text-lg font-bold">Windows Defender Bypass</span>
+        <span className="text-lg font-bold">Windows Defender </span>
       </div>
 
       {/* Signup Button */}
