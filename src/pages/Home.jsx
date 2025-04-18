@@ -22,13 +22,11 @@ export default function Home() {
         </p>
         <div className="flex justify-center space-x-4">
         <Link
-  to="/techniques"
-  className="relative inline-block px-6 py-2 rounded text-black font-semibold bg-cyan-400 shadow-lg overflow-hidden group hover:bg-cyan-300 transition duration-300"
->
-  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 group-hover:animate-shine"></span>
-  Explore Techniques
-</Link>
-
+         to="/techniques"
+             className="bg-cyan-400 text-black px-6 py-2 rounded shadow-lg hover:bg-cyan-300 transition duration-300 
+             ring-2 ring-cyan-400 ring-offset-2 ring-offset-[#0f0f0f] hover:shadow-cyan-400/70 hover:ring-4"
+              >
+                    Explore Techniques</Link>
           <Link to="/resources" className="border border-gray-600 px-6 py-2 rounded hover:bg-gray-800 transition">Resources</Link>
         </div>
       </section>
