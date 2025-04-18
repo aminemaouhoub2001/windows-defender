@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -36,9 +36,7 @@ export default function Auth() {
         return;
       }
 
-      // Optionnel : Stocker le token
       // localStorage.setItem('token', data.token);
-
       navigate('/generator');
     } catch (err) {
       setError('❌ Server error. Please try again later.');
@@ -70,7 +68,6 @@ export default function Auth() {
           <div className="text-cyan-400 text-4xl mb-6">🛡️</div>
           <h1 className="text-xl font-bold mb-6">Ready to bypass Windows Defender?</h1>
 
-          {/* Error Message */}
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
 
           {/* Social Logins */}
@@ -122,7 +119,7 @@ export default function Auth() {
             Sign in
           </button>
 
-          {/* Resend link */}
+          {/* Resend if not verified */}
           {error.includes('verify your email') && (
             <p className="text-xs text-gray-400 mt-2">
               Didn’t receive verification email?{' '}
@@ -132,9 +129,9 @@ export default function Auth() {
 
           {/* Footer */}
           <div className="text-sm text-gray-400 mt-4">
-            <a href="#" className="underline hover:text-white block mb-2">
+            <Link to="/forgot-password" className="underline hover:text-white block mb-2">
               Forgot your password?
-            </a>
+            </Link>
             <span>
               Don’t have an account?{' '}
               <a href="/signup" className="underline text-cyan-400 hover:text-white">
