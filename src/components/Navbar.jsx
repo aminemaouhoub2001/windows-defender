@@ -17,7 +17,7 @@ export default function Navbar() {
       </div>
       <div className="space-x-6">
         <a href="/generator" className="hover:text-cyan-400">Home</a>
-        <a href="/generator" className="hover:text-cyan-400">Generator</a>
+        <a href="/generator" className="hover:text-cyan-400">Resources</a>
         <a href="#" className="hover:text-cyan-400">Techniques</a>
         <button onClick={handleLogout} className="hover:text-red-400">Logout</button>
       </div>
