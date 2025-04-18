@@ -62,6 +62,15 @@ export default function Home() {
             </div>
           ))}
         </div>
+        {/* 🔵 View All Techniques Button with Glow */}
+        <div className="mt-12 flex justify-center">
+          <Link
+            to="/techniques"
+            className="bg-[#0f0f0f] text-cyan-400 px-6 py-2 rounded-md border border-cyan-400 shadow-md hover:shadow-cyan-500/50 transition duration-300 ring-2 ring-cyan-500/20 animate-pulse"
+          >
+            View All Techniques
+          </Link>
+        </div>
       </section>
 
       {/* TOOLS BLOCK */}
