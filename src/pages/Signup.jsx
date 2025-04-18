@@ -57,7 +57,7 @@ export default function Signup() {
       {/* Header */}
       <div className="flex justify-between items-center px-2 py-4 bg-black">
         <div className="flex items-center space-x-2">
-          <img src="/src/assets/windows-defender.svg" alt="logo" className="h-6" />
+        <img src="/windows-defender.svg" alt="logo" className="h-6" />
           <span className="text-lg font-bold">Windows Defender Bypass</span>
         </div>
         <button
