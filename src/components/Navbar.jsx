@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom'; // 👈 استخدم NavLink بدل Link
 
 export default function Navbar() {
   return (
@@ -12,28 +12,70 @@ export default function Navbar() {
         </h1>
       </div>
 
-      {/* Navigation Links + Buttons */}
+      {/* Navigation Links */}
       <div className="flex items-center space-x-6 text-sm">
-        <Link to="/" className="hover:text-cyan-400 transition">Home</Link>
-        <Link to="/techniques" className="hover:text-cyan-400 transition">Techniques</Link>
-        <Link to="/resources" className="hover:text-cyan-400 transition">Resources</Link>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive
+              ? 'text-cyan-400 font-semibold underline transition'
+              : 'hover:text-cyan-400 transition'
+          }
+        >
+          Home
+        </NavLink>
+
+        <NavLink
+          to="/techniques"
+          className={({ isActive }) =>
+            isActive
+              ? 'text-cyan-400 font-semibold underline transition'
+              : 'hover:text-cyan-400 transition'
+          }
+        >
+          Techniques
+        </NavLink>
+
+        <NavLink
+          to="/resources"
+          className={({ isActive }) =>
+            isActive
+              ? 'text-cyan-400 font-semibold underline transition'
+              : 'hover:text-cyan-400 transition'
+          }
+        >
+          Resources
+        </NavLink>
 
         {/* Auth Buttons */}
-        <Link to="/login" className="px-3 py-1 border rounded hover:bg-gray-800 transition">
+        <NavLink
+          to="/login"
+          className={({ isActive }) =>
+            `px-3 py-1 border rounded transition ${
+              isActive ? 'bg-gray-800 border-cyan-400' : 'hover:bg-gray-800'
+            }`
+          }
+        >
           <span className="flex items-center gap-1">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l4-4m0 0l-4-4m4 4H3" />
             </svg>
             Sign In
           </span>
-        </Link>
+        </NavLink>
 
-        <Link
+        <NavLink
           to="/signup"
-          className="px-4 py-1 border border-cyan-400 text-white rounded hover:bg-cyan-400 hover:text-black transition duration-300"
+          className={({ isActive }) =>
+            `px-4 py-1 border rounded transition duration-300 ${
+              isActive
+                ? 'bg-cyan-400 text-black border-cyan-400'
+                : 'border-cyan-400 text-white hover:bg-cyan-400 hover:text-black'
+            }`
+          }
         >
           Sign Up
-        </Link>
+        </NavLink>
       </div>
     </nav>
   );
