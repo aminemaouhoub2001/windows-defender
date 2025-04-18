@@ -64,10 +64,12 @@ export default function Home() {
         </div>
         {/* 🔵 View All Techniques Button with Glow */}
         <div className="mt-12 flex justify-center">
-          <Link
+        <Link
             to="/techniques"
-            className="bg-[#0f0f0f] text-cyan-400 px-6 py-2 rounded-md border border-cyan-400 shadow-md hover:shadow-cyan-500/50 transition duration-300 ring-2 ring-cyan-500/20 animate-pulse"
-          >
+                className="bg-cyan-400 text-black px-6 py-2 rounded shadow-lg hover:bg-cyan-300 transition duration-300 
+                  ring-2 ring-cyan-400 ring-offset-2 ring-offset-[#0f0f0f] hover:shadow-cyan-400/70 hover:ring-4"
+                                        >
+
             View All Techniques
           </Link>
         </div>
