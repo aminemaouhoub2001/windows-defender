@@ -41,8 +41,8 @@ export default function Home() {
           <p className="text-green-400 mt-2">🛡️ Built for red teaming & ethical research</p>
         </div>
         <div className="flex justify-center">
-          <div className="bg-[#0f0f0f] p-10 rounded-xl border border-cyan-400 shadow-lg animate-pulse">
-            <img src="/windows-defender.svg" alt="logo" className="h-20 w-20 opacity-90" />
+          <div className="bg-[#0f0f0f] p-20 rounded-xl border border-cyan-400 shadow-lg animate-pulse">
+            <img src="/windows-defender.svg" alt="logo" className="h-28 w-28 opacity-90" />
           </div>
         </div>
       </section>
