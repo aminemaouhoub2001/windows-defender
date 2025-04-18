@@ -21,7 +21,14 @@ export default function Home() {
           Educational platform for security professionals to learn malware evasion.
         </p>
         <div className="flex justify-center space-x-4">
-          <Link to="/techniques" className="bg-cyan-400 text-black px-6 py-2 rounded shadow hover:bg-cyan-300 transition">Explore Techniques</Link>
+        <Link
+  to="/techniques"
+  className="relative inline-block px-6 py-2 rounded text-black font-semibold bg-cyan-400 shadow-lg overflow-hidden group hover:bg-cyan-300 transition duration-300"
+>
+  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 group-hover:opacity-20 group-hover:animate-shine"></span>
+  Explore Techniques
+</Link>
+
           <Link to="/resources" className="border border-gray-600 px-6 py-2 rounded hover:bg-gray-800 transition">Resources</Link>
         </div>
       </section>
@@ -64,12 +71,10 @@ export default function Home() {
         </div>
         {/* 🔵 View All Techniques Button with Glow */}
         <div className="mt-12 flex justify-center">
-        <Link
+          <Link
             to="/techniques"
-                className="bg-cyan-400 text-black px-6 py-2 rounded shadow-lg hover:bg-cyan-300 transition duration-300 
-                  ring-2 ring-cyan-400 ring-offset-2 ring-offset-[#0f0f0f] hover:shadow-cyan-400/70 hover:ring-4"
-                                        >
-
+            className="bg-[#0f0f0f] text-cyan-400 px-6 py-2 rounded-md border border-cyan-400 shadow-md hover:shadow-cyan-500/50 transition duration-300 ring-2 ring-cyan-500/20 animate-pulse"
+          >
             View All Techniques
           </Link>
         </div>
