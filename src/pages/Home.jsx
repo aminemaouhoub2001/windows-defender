@@ -4,10 +4,10 @@ import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white">
+    <div className="min-h-screen text-white">
       <Navbar />
 
-      {/* HERO */}
+      {/* Bloc 1 - HERO */}
       <section className="text-center py-20 px-6 bg-gradient-to-b from-[#0f0f0f] to-[#111111]">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           <span className="text-cyan-400">Mal</span>
@@ -26,8 +26,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ABOUT SECTION */}
-      <section className="bg-[#101010] py-20 px-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12 border-t border-[#1f1f1f]">
+      {/* Bloc 2 - ABOUT SECTION */}
+      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat py-20 px-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12 border-t border-[#1f1f1f]">
         <div>
           <h2 className="text-4xl font-bold mb-4">Empowering Malware Bypass Innovation</h2>
           <p className="text-gray-400 mb-3">
@@ -42,8 +42,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* TECHNIQUES */}
-      <section className="bg-[#0a0a0a] bg-[url('/dot-grid.svg')] bg-center bg-repeat py-24 px-6 border-t border-[#1d1d1d]">
+      {/* Bloc 3 - TECHNIQUES */}
+      <section className="bg-gradient-to-b from-[#0f0f0f] to-[#111111] py-24 px-6 border-t border-[#1d1d1d]">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Advanced Injection Techniques</h2>
           <p className="text-gray-400">Key payload execution strategies used by real-world malware.</p>
@@ -64,8 +64,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* RESOURCES & TOOLS */}
-      <section className="bg-[#0f0f0f] bg-[url('/dot-grid.svg')] bg-center bg-repeat py-20 px-6">
+      {/* Bloc 4 - RESOURCES */}
+      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat py-20 px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Resources & Tools</h2>
           <p className="text-gray-400">Everything you need to understand and simulate evasion techniques.</p>
@@ -86,8 +86,18 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FINAL FOOTER SECTION */}
-      <footer className="bg-[#0f0f0f] text-gray-400 pt-14 pb-8 px-8 border-t border-[#1d1d1d]">
+      {/* Bloc 5 - COMMUNITY CTA */}
+      <section className="bg-gradient-to-b from-[#0f0f0f] to-[#111111] py-24 text-center px-6 border-t border-[#1d1d1d]">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Stay Updated on Emerging Techniques</h2>
+        <p className="text-gray-400 max-w-2xl mx-auto mb-8">Join our community to receive the latest updates on evolving malware evasion techniques and countermeasures.</p>
+        <div className="flex justify-center gap-6 flex-wrap">
+          <Link to="/join" className="bg-cyan-400 text-black px-6 py-3 rounded shadow-lg hover:bg-cyan-300 transition">Join the Community</Link>
+          <Link to="/newsletter" className="border border-gray-600 px-6 py-3 rounded hover:bg-gray-800 transition">Subscribe to Newsletter</Link>
+        </div>
+      </section>
+
+      {/* Bloc 6 - FOOTER */}
+      <footer className="bg-[url('/dot-grid.svg')] bg-center bg-repeat text-gray-400 pt-14 pb-8 px-8 border-t border-[#1d1d1d]">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-2">
