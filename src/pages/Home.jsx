@@ -114,18 +114,19 @@ export default function Home() {
         </div>
       </section>
 
-     {/* SECTION: Footer Content (Block 5) */}
-<section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-20 px-6">
-  <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+      {/* FOOTER */}
+      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-20 px-6">
 
-    {/* Bloc 1 - Branding & Social */}
+  <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+    
+    {/* Bloc gauche - translation vers la gauche */}
     <div className="transform translate-x-[-20px]">
       <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-2">
         🛡️ Evasion <span className="text-purple-400">Techniques</span>
       </h1>
       <p className="text-sm mb-4 leading-relaxed">
-        Educating professionals on <span className="text-cyan-400">malware evasion techniques</span><br />
-        for better defense strategies.
+        Educating professionals on <span className="text-cyan-400">malware evasion techniques</span>
+        <br />for better defense strategies.
       </p>
       <div className="flex space-x-4 text-xl text-white">
         <a href="https://wa.me/+212123456789" target="_blank" rel="noreferrer">🟢</a>
@@ -135,7 +136,7 @@ export default function Home() {
       </div>
     </div>
 
-    {/* Bloc 2 - Quick Links */}
+    {/* Quick Links */}
     <div>
       <h4 className="font-semibold text-white mb-2">Quick Links</h4>
       <ul className="space-y-1 text-sm">
@@ -145,7 +146,7 @@ export default function Home() {
       </ul>
     </div>
 
-    {/* Bloc 3 - Contributors */}
+    {/* Contributors */}
     <div>
       <h4 className="font-semibold text-white mb-2">Contributors</h4>
       <ul className="space-y-1 text-sm">
@@ -155,22 +156,23 @@ export default function Home() {
       </ul>
     </div>
 
-    {/* Bloc 4 - Feedback */}
+    {/* Feedback */}
     <div>
       <h4 className="font-semibold text-white mb-2">Feedback</h4>
       <p className="text-sm mb-2">Let us know what you think about the site:</p>
       <Link to="/feedback" className="text-cyan-400 text-sm hover:underline">Leave a comment →</Link>
     </div>
-  </div>
-</section>
 
-{/* SECTION: Final Copyright Notice (Block 6) */}
-<section className="bg-[#0f0f0f] py-6 px-6 text-center">
-  <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-xs border-t border-[#1f1f1f] pt-4 text-gray-500">
-    <span>© {new Date().getFullYear()} Evasion Techniques. All rights reserved.</span>
-    <span>For educational purposes only. Use responsibly.</span>
-  </div>{/* ✅ hadchi li kan na9es */}
-</section>
-</div>
+  </div>
+ 
+  </section>
+
+   <section className="bg-[#0f0f0f] py-20 px-6 text-center">
+   <div className="flex justify-between text-xs border-t border-[#1f1f1f] pt-4">
+     <span>© {new Date().getFullYear()} Evasion Techniques. All rights reserved.</span>
+     <span className="text-gray-500">For educational purposes only. Use responsibly.</span>
+   </div>
+ </section>
+ </div>
   );
-}¨
+}
