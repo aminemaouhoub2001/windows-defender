@@ -4,17 +4,19 @@ import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white">
+    <div className="min-h-screen text-white">
       <Navbar />
 
-      {/* Block 1: HERO */}
+      {/* HERO */}
       <section className="text-center py-20 px-6 bg-[#0f0f0f]">
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           <span className="text-cyan-400">Mal</span>
           <span className="text-purple-500">ware </span>
           <span className="text-green-400">Evasion</span>
         </h1>
-        <h2 className="text-3xl md:text-5xl font-bold mb-6">Techniques & Countermeasures</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          Techniques & Countermeasures
+        </h2>
         <p className="text-gray-400 max-w-xl mx-auto mb-10">
           Educational platform for security professionals to learn malware evasion.
         </p>
@@ -24,8 +26,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Block 2: ABOUT */}
-      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat py-20 px-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12 border-t border-[#1f1f1f]">
+      {/* ABOUT */}
+      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-20 px-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
         <div>
           <h2 className="text-4xl font-bold mb-4">Empowering Malware Bypass Innovation</h2>
           <p className="text-gray-400 mb-3">
@@ -40,10 +42,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Block 3: TECHNIQUES */}
-      <section className="bg-[#0f0f0f] py-24 px-6 border-t border-[#1f1f1f]">
+      {/* TECHNIQUES */}
+      <section className="bg-[#0f0f0f] py-24 px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Advanced Techniques</h2>
+          <h2 className="text-4xl font-bold mb-4">Advanced Injection Techniques</h2>
           <p className="text-gray-400">Key payload execution strategies used by real-world malware.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
@@ -60,13 +62,10 @@ export default function Home() {
             </div>
           ))}
         </div>
-        <div className="flex justify-center mt-8">
-          <Link to="/techniques" className="bg-cyan-500 px-6 py-2 rounded text-black hover:bg-cyan-400 transition">View All Techniques</Link>
-        </div>
       </section>
 
-      {/* Block 4: RESOURCES */}
-      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat py-24 px-6 border-t border-[#1f1f1f]">
+      {/* TOOLS BLOCK */}
+      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-20 px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Resources & Tools</h2>
           <p className="text-gray-400">Everything you need to understand and simulate evasion techniques.</p>
@@ -87,20 +86,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Block 5: JOIN COMMUNITY */}
-      <section className="bg-[#0f0f0f] py-20 px-6 border-t border-[#1f1f1f]">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold mb-4">Stay Updated on Emerging Techniques</h2>
-          <p className="text-gray-400 mb-8 max-w-2xl mx-auto">Join our community to receive the latest updates on evolving malware evasion techniques and countermeasures.</p>
-          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6">
-            <button className="bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-300 transition">Join the Community</button>
-            <button className="border border-gray-600 px-6 py-2 rounded hover:bg-gray-800 transition">Subscribe to Newsletter</button>
-          </div>
+      {/* COMMUNITY JOIN BLOCK */}
+      <section className="bg-[#0f0f0f] py-20 px-6 text-center">
+        <h2 className="text-3xl font-bold mb-4">Stay Updated on Emerging Techniques</h2>
+        <p className="text-gray-400 mb-8">
+          Join our community to receive the latest updates on evolving malware evasion techniques and countermeasures.
+        </p>
+        <div className="flex justify-center gap-4">
+          <button className="bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-300">Join the Community</button>
+          <button className="border border-gray-500 px-6 py-2 rounded hover:bg-gray-800">Subscribe to Newsletter</button>
         </div>
       </section>
 
-      {/* Block 6: FOOTER */}
-      <footer className="bg-[url('/dot-grid.svg')] bg-center bg-repeat text-gray-400 pt-14 pb-8 px-8 border-t border-[#1f1f1f]">
+      {/* FOOTER */}
+      <footer className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] text-gray-400 pt-14 pb-8 px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-2">
@@ -110,10 +109,10 @@ export default function Home() {
               Educating professionals on malware evasion techniques for better defense strategies.
             </p>
             <div className="flex space-x-4 text-xl text-white">
-              <a href="https://wa.me/+212123456789" target="_blank" rel="noreferrer">🟢</a>
-              <a href="https://t.me/aminemaouhoub" target="_blank" rel="noreferrer">📨</a>
-              <a href="https://linkedin.com/in/aminemaouhoub" target="_blank" rel="noreferrer">🔗</a>
-              <a href="mailto:maouhoub.amine@etu.uae.ac.ma" target="_blank" rel="noreferrer">✉️</a>
+              <a href="https://wa.me/+212123456789" target="_blank">🟢</a>
+              <a href="https://t.me/aminemaouhoub" target="_blank">📨</a>
+              <a href="https://linkedin.com/in/aminemaouhoub" target="_blank">🔗</a>
+              <a href="mailto:maouhoub.amine@etu.uae.ac.ma" target="_blank">✉️</a>
             </div>
           </div>
           <div>
