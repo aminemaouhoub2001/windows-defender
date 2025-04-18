@@ -115,51 +115,61 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] text-gray-400 pt-14 pb-8 px-12">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          <div>
-          <h1 className="text-lg font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-2">
-               <span className="text-2xl">🛡️</span> 
-              <span className="text-xl">Evasion <span className="text-purple-400">Techniques</span></span>
-                </h1>
-            <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
-             Educating professionals on <span className="text-cyan-300">malware evasion techniques</span> 
-             for better defense strategies.
-           </p>
-            <div className="flex space-x-4 text-xl text-white">
-              <a href="https://wa.me/+212123456789" target="_blank">🟢</a>
-              <a href="https://t.me/aminemaouhoub" target="_blank">📨</a>
-              <a href="https://linkedin.com/in/aminemaouhoub" target="_blank">🔗</a>
-              <a href="mailto:maouhoub.amine@etu.uae.ac.ma" target="_blank">✉️</a>
-            </div>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white mb-2">Quick Links</h4>
-            <ul className="space-y-1 text-sm">
-              <li><Link to="/" className="hover:underline">Home</Link></li>
-              <li><Link to="/techniques" className="hover:underline">Techniques</Link></li>
-              <li><Link to="/resources" className="hover:underline">Resources</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white mb-2">Contributors</h4>
-            <ul className="space-y-1 text-sm">
-              <li>MAOUHOUB Amine</li>
-              <li>MOUMNI Anas</li>
-              <li>IDIDER Maryem</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white mb-2">Feedback</h4>
-            <p className="text-sm mb-2">Let us know what you think about the site:</p>
-            <Link to="/feedback" className="text-cyan-400 text-sm hover:underline">Leave a comment →</Link>
-          </div>
-        </div>
-        <div className="flex justify-between text-xs border-t border-[#1f1f1f] pt-4">
-          <span>© {new Date().getFullYear()} Evasion Techniques. All rights reserved.</span>
-          <span className="text-gray-500">For educational purposes only. Use responsibly.</span>
-        </div>
-      </footer>
+      <footer className="bg-[#0f0f0f] text-gray-400 pt-14 pb-8 px-8 border-t border-[#1d1d1d]">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+    
+    {/* Bloc gauche - translation vers la gauche */}
+    <div className="transform translate-x-[-20px]">
+      <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-2">
+        🛡️ Evasion <span className="text-purple-400">Techniques</span>
+      </h1>
+      <p className="text-sm mb-4 leading-relaxed">
+        Educating professionals on <span className="text-cyan-400">malware evasion techniques</span>
+        <br />for better defense strategies.
+      </p>
+      <div className="flex space-x-4 text-xl text-white">
+        <a href="https://wa.me/+212123456789" target="_blank" rel="noreferrer">🟢</a>
+        <a href="https://t.me/aminemaouhoub" target="_blank" rel="noreferrer">📨</a>
+        <a href="https://linkedin.com/in/aminemaouhoub" target="_blank" rel="noreferrer">🔗</a>
+        <a href="mailto:maouhoub.amine@etu.uae.ac.ma" target="_blank" rel="noreferrer">✉️</a>
+      </div>
+    </div>
+
+    {/* Quick Links */}
+    <div>
+      <h4 className="font-semibold text-white mb-2">Quick Links</h4>
+      <ul className="space-y-1 text-sm">
+        <li><Link to="/" className="hover:underline">Home</Link></li>
+        <li><Link to="/techniques" className="hover:underline">Techniques</Link></li>
+        <li><Link to="/resources" className="hover:underline">Resources</Link></li>
+      </ul>
+    </div>
+
+    {/* Contributors */}
+    <div>
+      <h4 className="font-semibold text-white mb-2">Contributors</h4>
+      <ul className="space-y-1 text-sm">
+        <li>MAOUHOUB Amine</li>
+        <li>MOUMNI Anas</li>
+        <li>IDIDER Maryem</li>
+      </ul>
+    </div>
+
+    {/* Feedback */}
+    <div>
+      <h4 className="font-semibold text-white mb-2">Feedback</h4>
+      <p className="text-sm mb-2">Let us know what you think about the site:</p>
+      <Link to="/feedback" className="text-cyan-400 text-sm hover:underline">Leave a comment →</Link>
+    </div>
+
+  </div>
+
+  <div className="flex justify-between text-xs border-t border-[#1f1f1f] pt-4">
+    <span>© {new Date().getFullYear()} Evasion Techniques. All rights reserved.</span>
+    <span className="text-gray-500">For educational purposes only. Use responsibly.</span>
+  </div>
+</footer>
+
     </div>
   );
 }
