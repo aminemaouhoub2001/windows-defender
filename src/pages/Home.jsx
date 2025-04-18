@@ -4,128 +4,126 @@ import Navbar from '../components/Navbar';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white">
+    <div className="bg-[#0f0f0f] text-white min-h-screen">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="text-center py-20 px-6 bg-gradient-to-b from-[#0f0f0f] to-[#111]">
-        <h1 className="text-5xl md:text-6xl font-bold mb-6">
+      {/* Hero Section (Background uni) */}
+      <section className="text-center py-20 px-6 bg-[#0f0f0f]">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">
           <span className="text-cyan-400">Mal</span>
           <span className="text-purple-500">ware </span>
           <span className="text-green-400">Evasion</span>
         </h1>
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">Techniques & Countermeasures</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-6">
+          Techniques & Countermeasures
+        </h2>
         <p className="text-gray-400 max-w-xl mx-auto mb-10">
           Educational platform for security professionals to learn malware evasion.
         </p>
         <div className="flex justify-center space-x-4">
-          <Link to="/techniques" className="bg-cyan-400 text-black px-6 py-2 rounded shadow hover:bg-cyan-300 transition">Explore Techniques</Link>
-          <Link to="/resources" className="border border-gray-600 px-6 py-2 rounded hover:bg-gray-800 transition">Resources</Link>
+          <Link to="/techniques" className="bg-cyan-400 text-black px-6 py-2 rounded hover:bg-cyan-300 transition">
+            Explore Techniques
+          </Link>
+          <Link to="/resources" className="border px-6 py-2 rounded hover:bg-gray-800 transition">
+            Resources
+          </Link>
         </div>
       </section>
 
-      {/* About Section - Background with dot grid */}
-      <section className="bg-[#0a0a0a] bg-[url('/dot-grid.svg')] bg-repeat py-20 px-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12 border-t border-[#1f1f1f]">
+      {/* Block 2 – Empowering Innovation (Background à carreaux) */}
+      <section className="bg-[url('/grid-bg.png')] bg-cover py-20 px-6 border-t border-[#1f1f1f] grid md:grid-cols-2 gap-10">
         <div>
-          <h2 className="text-4xl font-bold mb-4">Empowering Malware Bypass Innovation</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+            Empowering Malware Bypass Innovation
+          </h2>
           <p className="text-gray-400 mb-3">
-            <span className="text-cyan-400 font-semibold">Evasion Techniques</span> is built for red teamers, researchers and cybersecurity learners to explore advanced Windows Defender bypass methods.
+            Our project <span className="text-cyan-400 font-semibold">Evasion Techniques</span> is a smart platform to simulate advanced <strong>Windows Defender bypass</strong> strategies like:
           </p>
-          <p className="text-green-400 mt-2">🛡️ Ethical red teaming focused</p>
+          <ul className="text-gray-400 mb-4 list-disc pl-5 space-y-1">
+            <li>Local Shell Injection</li>
+            <li>Remote DLL Injection</li>
+            <li>Remote Shellcode Injection</li>
+            <li>Registry Injection</li>
+            <li>+ More advanced red teaming techniques</li>
+          </ul>
+          <p className="text-green-400 mt-2 font-medium flex items-center gap-2">
+            <span className="animate-pulse">⚡</span> Built for ethical research & red teaming
+          </p>
         </div>
-        <div className="flex justify-center">
-          <div className="bg-[#0f0f0f] p-12 rounded-xl border border-cyan-400 shadow-lg animate-pulse">
-            <img src="/windows-defender.svg" alt="logo" className="h-24 w-24 opacity-90" />
+        <div className="flex justify-center items-center">
+          <div className="border border-cyan-400 rounded-xl p-12 bg-[#0f0f0f] shadow-lg shadow-cyan-400/20">
+            <img src="/windows-defender.svg" alt="defender logo" className="h-20 w-20" />
           </div>
         </div>
       </section>
 
-      {/* Injection Techniques - Background same as Hero */}
-      <section className="bg-gradient-to-b from-[#0f0f0f] to-[#111111] py-24 px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Advanced Injection Techniques</h2>
-          <p className="text-gray-400">Core malware techniques tested on modern systems</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+      {/* Block 3 – Common Techniques (Background uni) */}
+      <section className="bg-[#0f0f0f] text-white py-20 px-6 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Common Evasion Techniques</h2>
+        <p className="text-gray-400 max-w-2xl mx-auto mb-12">
+          Explore the most prevalent techniques malware authors use to evade security controls and analysis tools.
+        </p>
+        <div className="grid gap-6 md:grid-cols-4 px-4 md:px-20">
           {[
-            { icon: "🧪", title: "Local Shell Injection", desc: "Injecting into local processes" },
-            { icon: "🧬", title: "Remote DLL Injection", desc: "DLL injection remotely" },
-            { icon: "📡", title: "Remote Shellcode", desc: "Injecting shellcode into other PIDs" },
-            { icon: "🔐", title: "Registry Injection", desc: "Payloads hidden in registry keys" }
-          ].map((item, i) => (
-            <div key={i} className="bg-[#111] p-6 border border-cyan-600 rounded-xl shadow hover:shadow-cyan-500/40 transition">
-              <div className="text-3xl mb-3 text-cyan-400">{item.icon}</div>
-              <h3 className="text-lg font-bold mb-1">{item.title}</h3>
-              <p className="text-sm text-gray-400">{item.desc}</p>
+            ['Local Shell Injection', 'Executes shellcode locally to hijack process context.'],
+            ['Remote DLL Injection', 'Injects a malicious DLL into another process.'],
+            ['Shellcode Injection', 'Direct shellcode execution in remote memory space.'],
+            ['Registry Injection', 'Persistence via registry manipulation.']
+          ].map(([title, desc], i) => (
+            <div key={i} className="bg-[#111111] p-6 rounded-xl shadow-md hover:shadow-cyan-500/10 transition">
+              <h3 className="text-xl font-semibold mb-2">{title}</h3>
+              <p className="text-gray-400 text-sm mb-3">{desc}</p>
+              <Link to="/techniques" className="text-cyan-400 text-sm hover:underline">Learn more →</Link>
             </div>
           ))}
         </div>
       </section>
 
-      {/* Resources & Tools - Dot Background */}
-      <section className="bg-[#0a0a0a] bg-[url('/dot-grid.svg')] bg-center bg-repeat py-20 px-6">
-        <div className="text-center mb-14">
-          <h2 className="text-4xl font-bold mb-3">Resources & Tools</h2>
-          <p className="text-gray-400">Curated content to assist your malware learning path.</p>
-        </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+      {/* Block 4 – Resources (Background à carreaux) */}
+      <section className="bg-[url('/grid-bg.png')] bg-cover py-20 px-6 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">Resources & Tools</h2>
+        <p className="text-gray-400 max-w-2xl mx-auto mb-12">
+          Curated resources to help you understand, detect, and defend against evasive malware.
+        </p>
+        <div className="grid md:grid-cols-3 gap-6 px-4 md:px-20">
           {[
-            { title: "Research Papers", desc: "Academic analysis of evasion methods.", link: "/resources/papers" },
-            { title: "Analysis Tools", desc: "Tools for malware debugging & injection.", link: "/resources/tools" },
-            { title: "Best Practices", desc: "Defensive countermeasures and playbooks.", link: "/resources/guides" },
-            { title: "Malware Samples", desc: "Safe and legal datasets for study.", link: "/resources/samples" }
-          ].map((r, i) => (
-            <div key={i} className="bg-[#111] p-6 rounded-xl shadow-md border border-gray-700 hover:shadow-cyan-600/30 transition">
-              <h3 className="text-lg font-semibold mb-2">{r.title}</h3>
-              <p className="text-gray-400 text-sm mb-3">{r.desc}</p>
-              <Link to={r.link} className="text-cyan-400 text-sm hover:underline">Learn more →</Link>
+            ['Research Papers', 'Academic research and papers on malware evasion.', 'Browse papers'],
+            ['Analysis Tools', 'Tools for analyzing and testing techniques.', 'Explore tools'],
+            ['Best Practices', 'Red teaming & detection engineering guides.', 'Read guides']
+          ].map(([title, desc, action], i) => (
+            <div key={i} className="bg-[#111111] p-6 rounded-xl hover:shadow-lg hover:shadow-cyan-400/10 transition">
+              <h3 className="text-xl font-semibold mb-2">{title}</h3>
+              <p className="text-gray-400 text-sm mb-3">{desc}</p>
+              <a href="#" className="text-cyan-400 text-sm hover:underline">{action} →</a>
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Block 5 – Team & Contact */}
+      <section className="bg-[#0f0f0f] py-16 px-6 text-center">
+        <h2 className="text-2xl md:text-3xl font-bold mb-6">Meet the Team</h2>
+        <p className="text-gray-400 mb-8">Creators of this platform:</p>
+        <div className="flex justify-center space-x-10 mb-6">
+          {[
+            ['MAOUHOUB Amine', 'LinkedIn', 'https://linkedin.com/in/amine'],
+            ['MOUMNI Anas', 'Telegram', 'https://t.me/anas'],
+            ['IDIDER Maryem', 'WhatsApp', 'https://wa.me/+2126XXXX']
+          ].map(([name, platform, link], i) => (
+            <div key={i} className="text-sm text-gray-300">
+              <p className="font-semibold">{name}</p>
+              <a href={link} target="_blank" className="text-cyan-400 hover:underline">{platform}</a>
+            </div>
+          ))}
+        </div>
+        <p className="text-sm text-gray-500 italic">Feel free to share your thoughts or support our mission!</p>
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#0f0f0f] text-gray-400 pt-14 pb-8 px-8 border-t border-[#1d1d1d]">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-          <div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-2">
-              🛡️ Evasion Techniques
-            </h1>
-            <p className="text-sm mb-4">
-              Team project by Moroccan cybersecurity students at ENSA Tangier.
-            </p>
-            <div className="flex space-x-4 text-xl text-white">
-              <a href="https://wa.me/+212123456789" target="_blank" rel="noreferrer">🟢</a>
-              <a href="https://t.me/aminemaouhoub" target="_blank" rel="noreferrer">📨</a>
-              <a href="https://linkedin.com/in/aminemaouhoub" target="_blank" rel="noreferrer">🔗</a>
-              <a href="mailto:maouhoub.amine@etu.uae.ac.ma" target="_blank" rel="noreferrer">✉️</a>
-            </div>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white mb-2">Quick Links</h4>
-            <ul className="space-y-1 text-sm">
-              <li><Link to="/" className="hover:underline">Home</Link></li>
-              <li><Link to="/techniques" className="hover:underline">Techniques</Link></li>
-              <li><Link to="/resources" className="hover:underline">Resources</Link></li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white mb-2">Contributors</h4>
-            <ul className="space-y-1 text-sm">
-              <li>🧠 MAOUHOUB Amine</li>
-              <li>🧪 MOUMNI Anas</li>
-              <li>🔬 IDIDER Maryem</li>
-            </ul>
-          </div>
-          <div>
-            <h4 className="font-semibold text-white mb-2">Feedback</h4>
-            <p className="text-sm mb-2">Have suggestions?</p>
-            <Link to="/feedback" className="text-cyan-400 text-sm hover:underline">Leave feedback →</Link>
-          </div>
-        </div>
-        <div className="flex justify-between text-xs border-t border-[#1f1f1f] pt-4">
-          <span>© {new Date().getFullYear()} Evasion Techniques.</span>
-          <span className="text-gray-500">For educational use only. Use responsibly.</span>
+      <footer className="bg-[#111111] py-6 px-6 text-sm text-gray-500 flex justify-between items-center flex-wrap">
+        <div>© {new Date().getFullYear()} Evasion Techniques. All rights reserved.</div>
+        <div className="text-right text-xs">
+          For educational purposes only. Use responsibly.
         </div>
       </footer>
     </div>
