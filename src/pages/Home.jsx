@@ -115,7 +115,8 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-20 px-6">
+      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-20 px-6">
+
   <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
     
     {/* Bloc gauche - translation vers la gauche */}
@@ -163,13 +164,14 @@ export default function Home() {
     </div>
 
   </div>
-
+</section>
+<section className="bg-[#0f0f0f] py-20 px-6 text-center">
   <div className="flex justify-between text-xs border-t border-[#1f1f1f] pt-4">
     <span>© {new Date().getFullYear()} Evasion Techniques. All rights reserved.</span>
     <span className="text-gray-500">For educational purposes only. Use responsibly.</span>
   </div>
-</footer>
 
+</section>
     </div>
   );
 }
