@@ -38,9 +38,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Empowering Section with Glowing Animation */}
-      <section className="bg-[#0d0d0d] grid grid-cols-1 md:grid-cols-2 gap-6 items-center py-24 px-8 md:px-16 border-t border-[#1a1a1a]">
-        {/* Left Text Content */}
+      {/* Empowering Section with Clean Glow Box */}
+      <section className="bg-[#0d0d0d] grid grid-cols-1 md:grid-cols-2 gap-10 items-center py-24 px-8 md:px-16 border-t border-[#1a1a1a]">
+        {/* Left Text */}
         <div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-white">
             Empowering Malware Bypass Innovation
@@ -59,15 +59,11 @@ export default function Home() {
           </p>
         </div>
 
-        {/* Right Glowing Card */}
+        {/* Glowing Logo Box */}
         <div className="flex justify-center items-center">
-          <div className="relative group">
-            {/* Glowing Box */}
-            <div className="w-56 h-56 bg-[#101010] border border-cyan-400 rounded-xl flex justify-center items-center transition duration-500 group-hover:shadow-[0_0_30px_10px_rgba(0,255,255,0.4)]">
-              <img src="/windows-defender.svg" alt="defender logo" className="h-20 w-20 opacity-80 group-hover:scale-110 transition duration-300" />
-            </div>
-            {/* Outer Glow Effect */}
-            <div className="absolute -inset-1 rounded-xl opacity-0 group-hover:opacity-100 blur-xl bg-cyan-400 transition duration-700 animate-pulse"></div>
+          <div className="relative w-[220px] h-[220px] bg-[#0f0f0f] border border-cyan-400 rounded-xl flex items-center justify-center shadow-[0_0_30px_2px_rgba(0,255,255,0.2)] hover:shadow-[0_0_50px_4px_rgba(0,255,255,0.4)] transition-all duration-500">
+            <img src="/windows-defender.svg" alt="Defender" className="h-20 w-20 opacity-90 hover:scale-110 transition duration-300" />
+            <div className="absolute inset-0 rounded-xl border border-cyan-500 opacity-10 animate-pulse"></div>
           </div>
         </div>
       </section>
