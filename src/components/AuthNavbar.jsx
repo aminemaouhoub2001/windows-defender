@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import logo from '../assets/windows-defender.svg'; // 👈 import direct
+import logo from '../assets/windows-defender.svg';
 
 export default function AuthNavbar() {
   const navigate = useNavigate();
