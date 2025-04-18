@@ -115,7 +115,7 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <footer className="bg-[#0f0f0f] text-gray-400 pt-14 pb-8 px-8 border-t border-[#1d1d1d]">
+      <footer className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-20 px-6">
   <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
     
     {/* Bloc gauche - translation vers la gauche */}
