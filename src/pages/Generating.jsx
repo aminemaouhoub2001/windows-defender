@@ -5,7 +5,9 @@ export default function Generating() {
   const [progress, setProgress] = useState(0);
   const navigate = useNavigate();
   const location = useLocation();
-  const selectedTechnique = location.state?.technique || 'Applying AMSI Patch';
+  const selectedTechnique = location.state?.technique || 'Patch AMSI (API)';
+  const projectName = location.state?.projectName || 'example-project';
+  const format = location.state?.format || 'EXE';
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -13,7 +15,14 @@ export default function Generating() {
         if (prev >= 100) {
           clearInterval(interval);
           setTimeout(() => {
-            navigate('/result'); // Rediriger vers résultat après 100%
+            navigate('/result', {
+              state: {
+                technique: selectedTechnique,
+                projectName,
+                format,
+                timestamp: new Date().toLocaleString(),
+              },
+            });
           }, 500);
         }
         return prev + 1;
@@ -24,36 +33,23 @@ export default function Generating() {
 
   return (
     <div className="min-h-screen bg-[#0f0f0f] text-white">
-      
-      {/* ✅ NAVBAR */}
       <nav className="flex justify-between items-center px-2 py-4 bg-black text-white">
         <div className="flex items-center space-x-2">
-        <img src="/windows-defender.svg" alt="logo" className="h-6" />
+          <img src="/windows-defender.svg" alt="logo" className="h-6" />
           <span className="text-lg font-bold">Windows Defender Bypass</span>
         </div>
         <div className="space-x-6 text-sm">
           <a href="/generator" className="hover:text-cyan-400">Home</a>
-          <a href="/generator" className="hover:text-cyan-400">Generator</a>
-          <a href="/techniques" className="hover:text-cyan-400">Techniques</a>
           <a href="/login" className="hover:text-cyan-400">Logout</a>
         </div>
       </nav>
 
-      {/* ✅ Loading UI */}
       <main className="flex flex-col items-center justify-center h-[calc(100vh-5rem)] px-4">
         <h2 className="text-2xl md:text-3xl font-semibold mb-8 mt-10">Generating payload...</h2>
 
-        {/* Circle Progress */}
         <div className="relative w-32 h-32 mb-6">
           <svg className="absolute top-0 left-0 w-full h-full transform -rotate-90">
-            <circle
-              cx="50%"
-              cy="50%"
-              r="45%"
-              stroke="#222"
-              strokeWidth="8"
-              fill="none"
-            />
+            <circle cx="50%" cy="50%" r="45%" stroke="#222" strokeWidth="8" fill="none" />
             <circle
               cx="50%"
               cy="50%"
@@ -71,7 +67,6 @@ export default function Generating() {
           </div>
         </div>
 
-        {/* Linear progress */}
         <div className="w-[280px] h-[6px] bg-[#1a1a1a] rounded-full mb-4">
           <div
             className="h-full bg-cyan-400 rounded-full transition-all"
@@ -79,12 +74,10 @@ export default function Generating() {
           ></div>
         </div>
 
-        {/* Message below */}
         <p className="text-sm text-gray-300 mb-6">
           Applying {selectedTechnique}...
         </p>
 
-        {/* Spinning circle */}
         <div className="animate-spin rounded-full h-6 w-6 border-b-2 border-cyan-400 mt-2"></div>
       </main>
     </div>
