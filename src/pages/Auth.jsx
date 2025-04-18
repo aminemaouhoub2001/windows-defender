@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
+import Navbar from '../components/Navbar'; // ✅ استدعاء الـ Navbar الجديد
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -45,22 +46,7 @@ export default function Auth() {
 
   return (
     <div className="min-h-screen bg-[#0f0f0f] text-white">
-      {/* Navbar */}
-      <div className="flex justify-between items-center px-2 py-4 bg-black">
-        <div className="flex items-center space-x-2">
-        <img src="/windows-defender.svg" alt="logo" className="h-6" />
-          <span className="text-lg font-bold">Windows Defender Bypass</span>
-        </div>
-        <div className="flex items-center space-x-2">
-          <p className="text-sm text-gray-400">New to Bypass?</p>
-          <a
-            href="/signup"
-            className="text-sm text-white bg-[#1f2937] hover:bg-[#374151] px-4 py-1.5 rounded transition"
-          >
-            Create account
-          </a>
-        </div>
-      </div>
+      <Navbar /> {/* ✅ استبدلنا الـ Navbar القديم بالجديد */}
 
       {/* Login Card */}
       <div className="flex items-center justify-center mt-12 px-4">
