@@ -167,8 +167,8 @@ export default function Home() {
  
   </section>
 
-   <section className="bg-[#0f0f0f] py-20 px-6 text-center">
-   <div className="flex justify-between text-xs pt-4">
+   <section className="bg-[#0f0f0f] py-10 px-4 text-center">
+   <div className="flex justify-between text-xs pt-2">
      <span>© {new Date().getFullYear()} Evasion Techniques. All rights reserved.</span>
      <span className="text-gray-500">For educational purposes only. Use responsibly.</span>
    </div>
