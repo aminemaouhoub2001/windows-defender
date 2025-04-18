@@ -43,75 +43,83 @@ export default function Home() {
             Empowering Malware Bypass Innovation
           </h2>
           <p className="text-gray-400 mb-4">
-            Our project <span className="text-cyan-400 font-medium">Evasion Techniques</span> is a smart platform that helps professionals and researchers understand, test, and simulate advanced <strong>Windows Defender bypass techniques</strong>.
+            <span className="text-cyan-400 font-medium">Evasion Techniques</span> is an advanced security lab designed to simulate <strong>real-world evasion attacks</strong> like shellcode injection, DLL hijacking, and stealthy persistence via registry.
           </p>
           <p className="text-gray-400 mb-4">
-            Built with cutting-edge web technology, our platform allows users to generate custom payloads and explore evasion strategies through an intuitive and professional interface.
+            It helps red teamers and analysts to understand how Windows Defender and modern AV systems can be bypassed, all for ethical research & cybersecurity improvement.
           </p>
           <p className="text-green-400 font-medium flex items-center gap-2">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v1m0 14v1m8-8h-1m-14 0H4m16.24 7.76l-.707-.707M6.343 6.343l-.707-.707M17.657 6.343l-.707.707M6.343 17.657l-.707.707" />
-            </svg>
-            Built for ethical research & red teaming
+            <span className="text-cyan-400">⚙️</span> Built for red teaming, malware research, and education
           </p>
         </div>
         <div className="flex justify-center items-center">
-          <div className="border border-cyan-400 p-10 rounded-xl shadow-lg bg-[#0f0f0f]">
+          <div className="border border-cyan-400 p-10 rounded-xl shadow-xl bg-[#0f0f0f] animate-pulse hover:animate-none">
             <img src="/windows-defender.svg" alt="defender logo" className="h-20 w-20 opacity-90 hover:scale-110 transition duration-300" />
           </div>
         </div>
       </section>
 
-      {/* Techniques Cards Section */}
+      {/* Techniques Cards */}
       <section className="bg-[#0a0a0a] text-white py-24 px-6 border-t border-[#1d1d1d]">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Powerful Evasion Modules</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4">Key Injection Techniques</h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
-            Explore advanced techniques used by red teamers and malware developers to bypass modern defenses.
-            Dive into real-world evasion strategies, simulated for research and awareness.
+            Discover powerful methods used to execute payloads stealthily in target systems by bypassing defenses and injecting code in memory, registry, or remote processes.
           </p>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* AMSI */}
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
+          {/* Local Shell Injection */}
           <div className="bg-[#111111] border border-cyan-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-500/30 transition duration-300">
-            <div className="text-cyan-400 text-4xl mb-4">🧬</div>
-            <h3 className="text-xl font-semibold mb-2">AMSI Patch</h3>
-            <p className="text-gray-400 mb-4">
-              Bypass Windows Antimalware Scan Interface by modifying in-memory detection logic.
+            <div className="text-cyan-400 text-3xl mb-3">🧪</div>
+            <h3 className="text-xl font-semibold mb-2">Local Shell Injection</h3>
+            <p className="text-gray-400 text-sm mb-4">
+              Inject shellcode locally into the process memory to execute payloads silently.
             </p>
-            <Link to="/techniques/amsi" className="text-cyan-400 font-medium hover:underline">
+            <Link to="/techniques/local-shell" className="text-cyan-400 text-sm hover:underline">
               Learn more →
             </Link>
           </div>
 
-          {/* XDR */}
+          {/* Remote DLL Injection */}
           <div className="bg-[#111111] border border-cyan-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-500/30 transition duration-300">
-            <div className="text-cyan-400 text-4xl mb-4">🔐</div>
-            <h3 className="text-xl font-semibold mb-2">XDR Encryption</h3>
-            <p className="text-gray-400 mb-4">
-              Use XOR-based encryption and format shuffling to evade behavioral engines.
+            <div className="text-cyan-400 text-3xl mb-3">📦</div>
+            <h3 className="text-xl font-semibold mb-2">Remote DLL Injection</h3>
+            <p className="text-gray-400 text-sm mb-4">
+              Inject a malicious DLL into a remote process using Windows API functions.
             </p>
-            <Link to="/techniques/xdr" className="text-cyan-400 font-medium hover:underline">
+            <Link to="/techniques/remote-dll" className="text-cyan-400 text-sm hover:underline">
               Learn more →
             </Link>
           </div>
 
-          {/* Sleep */}
+          {/* Remote Shellcode Injection */}
           <div className="bg-[#111111] border border-cyan-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-500/30 transition duration-300">
-            <div className="text-cyan-400 text-4xl mb-4">🕒</div>
-            <h3 className="text-xl font-semibold mb-2">Sleep Delay</h3>
-            <p className="text-gray-400 mb-4">
-              Insert sleep routines to delay execution and bypass sandbox detonation timing.
+            <div className="text-cyan-400 text-3xl mb-3">📡</div>
+            <h3 className="text-xl font-semibold mb-2">Remote Shellcode Injection</h3>
+            <p className="text-gray-400 text-sm mb-4">
+              Send and execute shellcode directly in another process’s address space.
             </p>
-            <Link to="/techniques/sleep" className="text-cyan-400 font-medium hover:underline">
+            <Link to="/techniques/remote-shellcode" className="text-cyan-400 text-sm hover:underline">
+              Learn more →
+            </Link>
+          </div>
+
+          {/* Registry Injection */}
+          <div className="bg-[#111111] border border-cyan-800 rounded-xl p-6 shadow-lg hover:shadow-cyan-500/30 transition duration-300">
+            <div className="text-cyan-400 text-3xl mb-3">🧬</div>
+            <h3 className="text-xl font-semibold mb-2">Registry Injection</h3>
+            <p className="text-gray-400 text-sm mb-4">
+              Achieve stealthy persistence by modifying Windows registry with payloads.
+            </p>
+            <Link to="/techniques/registry-injection" className="text-cyan-400 text-sm hover:underline">
               Learn more →
             </Link>
           </div>
         </div>
 
-        {/* Button */}
+        {/* CTA Button */}
         <div className="text-center mt-12">
           <Link
             to="/techniques"
