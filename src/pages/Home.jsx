@@ -50,7 +50,7 @@ export default function Home() {
       {/* TECHNIQUES */}
       <section className="bg-[#0f0f0f] py-24 px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Advanced Injection Techniques</h2>
+          <h2 className="text-4xl font-bold mb-4">Common Evasion Techniques</h2>
           <p className="text-gray-400">Key payload execution strategies used by real-world malware.</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
@@ -69,10 +69,12 @@ export default function Home() {
         </div>
         {/* 🔵 View All Techniques Button with Glow */}
         <div className="mt-12 flex justify-center">
-          <Link
-            to="/techniques"
-            className="bg-[#0f0f0f] text-cyan-400 px-6 py-2 rounded-md border border-cyan-400 shadow-md hover:shadow-cyan-500/50 transition duration-300 ring-2 ring-cyan-500/20 animate-pulse"
-          >
+        <Link
+             to="/techniques"
+               className="bg-cyan-400 text-black px-6 py-2 rounded shadow-lg hover:bg-cyan-300 transition duration-300 
+             ring-2 ring-cyan-400 ring-offset-2 ring-offset-[#0f0f0f] hover:shadow-cyan-400/70 hover:ring-4"
+                 >
+
             View All Techniques
           </Link>
         </div>
@@ -116,12 +118,14 @@ export default function Home() {
       <footer className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] text-gray-400 pt-14 pb-8 px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
-            <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-2">
-              🛡️ Evasion Techniques
-            </h1>
-            <p className="text-sm mb-4">
-              Educating professionals on malware evasion techniques for better defense strategies.
-            </p>
+          <h1 className="text-lg font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-2">
+               <span className="text-2xl">🛡️</span> 
+              <span className="text-xl">Evasion <span className="text-purple-400">Techniques</span></span>
+                </h1>
+            <p className="text-sm text-gray-300 leading-relaxed max-w-xs">
+             Educating professionals on <span className="text-cyan-300">malware evasion techniques</span> 
+             for better defense strategies.
+           </p>
             <div className="flex space-x-4 text-xl text-white">
               <a href="https://wa.me/+212123456789" target="_blank">🟢</a>
               <a href="https://t.me/aminemaouhoub" target="_blank">📨</a>
