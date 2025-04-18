@@ -8,7 +8,7 @@ export default function AuthNavbar() {
   return (
     <nav className="flex justify-between items-center px-4 py-4 bg-black text-white">
       <div className="flex items-center space-x-2">
-        <img src={logo} alt="logo" className="h-6" />
+        <img src={logo} alt="" className="h-6" />
         <span className="text-lg font-bold">Windows Defender Bypass</span>
       </div>
       <div>
