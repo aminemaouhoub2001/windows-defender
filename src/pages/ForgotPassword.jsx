@@ -3,41 +3,55 @@ import React, { useState } from 'react';
 export default function ForgotPassword() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [error, setError] = useState('');
 
-  const handleForgot = async () => {
+  const BASE_URL = import.meta.env.VITE_API_URL;
+
+  const handleSendLink = async () => {
+    setError('');
+    setMessage('');
+
     try {
-      const res = await fetch('http://localhost:5000/api/forgot-password', {
+      const res = await fetch(`${BASE_URL}/forgot-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email })
+        body: JSON.stringify({ email }),
       });
+
       const data = await res.json();
-      if (!res.ok) return setMessage(data.error || 'Error sending email');
-      setMessage('✅ Reset link sent to your email');
-    } catch {
-      setMessage('❌ Server error');
+
+      if (!res.ok) {
+        setError(data.error || 'Something went wrong.');
+        return;
+      }
+
+      setMessage('📩 Password reset link sent! Check your email.');
+    } catch (err) {
+      setError('❌ Server error.');
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white flex items-center justify-center">
-      <div className="bg-[#1a1a1a] p-6 rounded shadow w-full max-w-sm text-center">
-        <h1 className="text-lg font-bold mb-4">Forgot Password</h1>
-        <input
-          type="email"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          placeholder="Your email"
-          className="w-full px-4 py-2 mb-4 rounded bg-black text-white border border-gray-600"
-        />
-        <button
-          onClick={handleForgot}
-          className="w-full bg-cyan-400 hover:bg-cyan-500 text-black font-bold py-2 rounded"
-        >
-          Send Reset Link
-        </button>
-        {message && <p className="text-sm text-red-400 mt-4">{message}</p>}
-      </div>
+    <div className="min-h-screen text-white flex flex-col items-center justify-center bg-black">
+      <h2 className="text-2xl mb-4">Forgot Password</h2>
+
+      {message && <p className="text-green-400">{message}</p>}
+      {error && <p className="text-red-500">{error}</p>}
+
+      <input
+        type="email"
+        placeholder="Enter your email"
+        className="bg-gray-800 px-4 py-2 mb-4 rounded"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <button
+        onClick={handleSendLink}
+        className="bg-blue-500 px-4 py-2 rounded text-white"
+      >
+        Send Reset Link
+      </button>
     </div>
   );
 }

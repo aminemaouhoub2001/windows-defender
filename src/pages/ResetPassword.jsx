@@ -1,49 +1,68 @@
 import React, { useState } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function ResetPassword() {
   const [newPassword, setNewPassword] = useState('');
-  const [message, setMessage] = useState('');
-  const [params] = useSearchParams();
+  const [success, setSuccess] = useState('');
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const BASE_URL = import.meta.env.VITE_API_URL;
+  const token = new URLSearchParams(window.location.search).get('token');
 
   const handleReset = async () => {
+    setError('');
+    setSuccess('');
+
     try {
-      const res = await fetch('http://localhost:5000/api/reset-password', {
+      const res = await fetch(`${BASE_URL}/reset-password`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          token: params.get('token'),
-          newPassword,
-        }),
+        body: JSON.stringify({ token, newPassword }),
       });
 
       const data = await res.json();
-      if (!res.ok) return setMessage(data.error || 'Error resetting password');
-      setMessage('✅ Password reset successfully. You can now log in.');
-    } catch {
-      setMessage('❌ Server error');
+
+      if (!res.ok) {
+        setError(data.error || 'Error resetting password.');
+        return;
+      }
+
+      setSuccess('✅ Password updated successfully.');
+    } catch (err) {
+      setError('❌ Server error.');
     }
   };
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white flex items-center justify-center">
-      <div className="bg-[#1a1a1a] p-6 rounded shadow w-full max-w-sm text-center">
-        <h1 className="text-lg font-bold mb-4">Reset Password</h1>
-        <input
-          type="password"
-          value={newPassword}
-          onChange={(e) => setNewPassword(e.target.value)}
-          placeholder="New password"
-          className="w-full px-4 py-2 mb-4 rounded bg-black text-white border border-gray-600"
-        />
-        <button
-          onClick={handleReset}
-          className="w-full bg-cyan-400 hover:bg-cyan-500 text-black font-bold py-2 rounded"
-        >
-          Reset Password
-        </button>
-        {message && <p className="text-sm mt-4 text-red-400">{message}</p>}
-      </div>
+    <div className="min-h-screen text-white flex flex-col items-center justify-center bg-black">
+      <h2 className="text-2xl mb-4">Reset Password</h2>
+
+      {success && (
+        <div>
+          <p className="text-green-400 mb-2">{success}</p>
+          <button onClick={() => navigate('/login')} className="underline text-cyan-400">
+            Retour à la connexion
+          </button>
+        </div>
+      )}
+
+      {error && <p className="text-red-500">{error}</p>}
+
+      <input
+        type="password"
+        placeholder="New password"
+        className="bg-gray-800 px-4 py-2 mb-4 rounded"
+        value={newPassword}
+        onChange={(e) => setNewPassword(e.target.value)}
+      />
+
+      <button
+        onClick={handleReset}
+        className="bg-blue-500 px-4 py-2 rounded text-white"
+      >
+        Confirm Password
+      </button>
     </div>
   );
 }
