@@ -167,7 +167,7 @@ export default function Home() {
  
   </section>
 
-   <section className="bg-[#0f0f0f] py-20 px-6 text-center">
+   <section className="bg-[#0f0f0f] ">
    <div className="flex justify-between text-xs border-t border-[#1f1f1f] pt-4">
      <span>© {new Date().getFullYear()} Evasion Techniques. All rights reserved.</span>
      <span className="text-gray-500">For educational purposes only. Use responsibly.</span>
