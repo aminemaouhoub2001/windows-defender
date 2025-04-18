@@ -65,7 +65,7 @@ export default function Auth() {
       {/* Login Card */}
       <div className="flex items-center justify-center mt-12 px-4">
         <div className="w-full max-w-md bg-[#1a1a1a] rounded-xl shadow-md p-8 text-center">
-          <div className="text-cyan-400 text-4xl mb-6">🛡️</div>
+          <div className="text-cyan-400 text-4xl mb-6"></div>
           <h1 className="text-xl font-bold mb-6">Ready to bypass Windows Defender?</h1>
 
           {error && <p className="text-red-500 text-sm mb-4">{error}</p>}
