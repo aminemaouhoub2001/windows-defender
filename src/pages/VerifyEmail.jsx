@@ -17,7 +17,7 @@ export default function VerifyEmail() {
         const data = await res.text();
 
         if (res.ok) {
-          setStatus('✅ Email verified! Redirecting to login...');
+          setStatus(' Email verified! Redirecting to login...');
           setTimeout(() => navigate('/login'), 2500);
         } else {
           setStatus('❌ Verification failed or token expired.');

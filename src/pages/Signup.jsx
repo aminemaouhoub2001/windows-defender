@@ -42,7 +42,7 @@ export default function Signup() {
         return;
       }
   
-      setSuccess('✅ Account created! Please check your email to verify.');
+      setSuccess(' Account created! Please check your email to verify.');
       setFullName('');
       setEmail('');
       setPassword('');
@@ -78,7 +78,7 @@ export default function Signup() {
 
           {success && (
             <div className="text-green-500 text-sm mb-4">
-              ✅ Account created! Please check your email to verify.
+               Account created! Please check your email to verify.
               <br />
               <span className="text-gray-300 text-xs">
                 Didn’t receive it? Check your spam folder.

@@ -5,10 +5,10 @@ const { sendVerificationEmail } = require('../mailer');
 
 const SECRET = process.env.JWT_SECRET;
 
-// ✅ Helper: Email Validator
+//  Helper: Email Validator
 const isValidEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-// 🔐 SIGNUP
+//  SIGNUP
 exports.signup = async (req, res) => {
   const { full_name, email, password } = req.body;
 
@@ -33,27 +33,27 @@ exports.signup = async (req, res) => {
     const token = jwt.sign({ id: result.rows[0].id }, SECRET, { expiresIn: '15m' });
     await sendVerificationEmail(email, token);
 
-    res.status(201).json({ message: '✅ Account created! Please check your email to verify.' });
+    res.status(201).json({ message: ' Account created! Please check your email to verify.' });
   } catch (error) {
     console.error("❌ Signup Error:", error);
     res.status(500).json({ error: '❌ Signup failed', details: error.message });
   }
 };
 
-// 📩 VERIFY EMAIL
+//  VERIFY EMAIL
 exports.verifyEmail = async (req, res) => {
   const { token } = req.query;
 
   try {
     const decoded = jwt.verify(token, SECRET);
     await pool.query('UPDATE users SET is_verified = true WHERE id = $1', [decoded.id]);
-    res.send('<h2 style="color: green;">✅ Your email has been verified. You can now login.</h2>');
+    res.send('<h2 style="color: green;"> Your email has been verified. You can now login.</h2>');
   } catch (err) {
     res.status(400).send('<h2 style="color: red;">❌ Invalid or expired verification link</h2>');
   }
 };
 
-// 🔓 SIGNIN
+//  SIGNIN
 exports.signin = async (req, res) => {
   const { email, password } = req.body;
 
@@ -79,7 +79,7 @@ exports.signin = async (req, res) => {
   }
 };
 
-// 🔁 FORGOT PASSWORD
+//  FORGOT PASSWORD
 exports.forgotPassword = async (req, res) => {
   const { email } = req.body;
 
@@ -95,7 +95,6 @@ exports.forgotPassword = async (req, res) => {
 
     const token = jwt.sign({ id: user.id }, SECRET, { expiresIn: '15m' });
 
-    // ✅ إصلاح الرابط: التعامل مع CLIENT_URL حتى إذا كانت فارغة أو undefined
     const baseUrl = process.env.CLIENT_URL?.trim() || 'https://windowsdefenderbypasscom.quest';
     const link = `${baseUrl}/reset-password?token=${token}`;
 
@@ -107,14 +106,14 @@ exports.forgotPassword = async (req, res) => {
   }
 };
 
-// 🔒 RESET PASSWORD
+//  RESET PASSWORD
 exports.resetPassword = async (req, res) => {
   const { token, newPassword } = req.body;
   try {
     const decoded = jwt.verify(token, SECRET);
     const hashed = await bcrypt.hash(newPassword, 10);
     await pool.query('UPDATE users SET password = $1 WHERE id = $2', [hashed, decoded.id]);
-    res.json({ message: '🔐 Password updated successfully' });
+    res.json({ message: ' Password updated successfully' });
   } catch (error) {
     res.status(400).json({ error: 'Invalid or expired token' });
   }

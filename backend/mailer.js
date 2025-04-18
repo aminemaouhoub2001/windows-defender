@@ -11,8 +11,8 @@ async function sendVerificationEmail(to, token, customLink = null) {
   const isReset = customLink !== null;
 
   const subject = isReset
-    ? '🔑 Reset Your Password'
-    : '🔐 Verify your Email';
+    ? ' Reset Your Password'
+    : ' Verify your Email';
 
   const actionText = isReset
     ? 'Click the link below to reset your password:'
