@@ -81,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* TOOLS BLOCK */}
-      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-20 px-6">
+      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-10 px-4">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Resources & Tools</h2>
           <p className="text-gray-400">Everything you need to understand and simulate evasion techniques.</p>
