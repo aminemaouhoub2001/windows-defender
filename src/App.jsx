@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Generator from './pages/Generator';
+
 import Auth from './pages/Auth';
 import Signup from './pages/Signup';
 import Generating from './pages/Generating';
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/login" element={<Auth />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/generator" element={<Generator />} />
+    
         <Route path="/generating" element={<Generating />} />
         <Route path="/result" element={<Result />} />
         <Route path="/verify-email" element={<VerifyEmail />} />
