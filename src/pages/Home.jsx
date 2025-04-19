@@ -124,11 +124,11 @@ export default function Home() {
     {/* Bloc gauche - translation vers la gauche */}
     <div className="transform translate-x-[-20px]">
         <h1 className="text-lg font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent">
-          Evasion <span className="font-bold">Techniques</span>
+         MMI <span className="font-bold">Evader</span>
         </h1>
       <p className="text-sm mb-4 leading-relaxed">
-        Educating professionals on <span className="text-cyan-400">malware evasion techniques</span>
-        <br />for better defense strategies.
+      Created by a passionate  <span className="text-cyan-400">Cybersecurity Engineering team</span>
+        <br />dedicated to exploring modern evasion strategies & defense mechanisms
       </p>
       <div className="flex space-x-4 text-xl mt-3">
   {/* WhatsApp */}
