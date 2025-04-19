@@ -115,13 +115,13 @@ export default function Home() {
       </section>
 
       {/* FOOTER */}
-      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-8 px-6">
+      <section className="bg-[url('/dot-grid.svg')] bg-center bg-repeat bg-[#0a0a0a] py-6 px-6">
 
-  <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-4">
+  <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-1">
     
     {/* Bloc gauche - translation vers la gauche */}
     <div className="transform translate-x-[-20px]">
-      <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-4">
+      <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-1">
         🛡️ Evasion <span className="text-purple-400">Techniques</span>
       </h1>
       <p className="text-sm mb-4 leading-relaxed">
