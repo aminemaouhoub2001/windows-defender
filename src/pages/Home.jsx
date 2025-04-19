@@ -12,7 +12,7 @@ export default function Home() {
         <h1 className="text-4xl md:text-6xl font-bold mb-6">
           <span className="text-cyan-400">Mal</span>
           <span className="text-purple-500">ware </span>
-          <span className="text-green-400"></span>
+          <span className="text-green-400">Evasion</span>
         </h1>
         <h2 className="text-2xl md:text-4xl font-bold mb-4">Techniques & Countermeasures</h2>
         <p className="text-gray-400 max-w-xl mx-auto mb-8 px-2">
