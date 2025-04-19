@@ -133,7 +133,7 @@ export default function Home() {
       <div className="flex space-x-4 text-xl mt-3">
   {/* WhatsApp */}
   <a
-    href="https://wa.me/+212123456789"
+    href="https://wa.me/212767896267"
     target="_blank"
     rel="noopener noreferrer"
     className="hover:scale-110 transition"
