@@ -65,17 +65,18 @@ export default function Navbar() {
         </NavLink>
 
         <NavLink
-          to="/signup"
-          className={({ isActive }) =>
-            `px-4 py-1 border rounded transition duration-300 ${
-              isActive
-                ? 'bg-cyan-400 text-black border-cyan-400'
-                : 'border-cyan-400 text-white hover:bg-cyan-400 hover:text-black'
-            }`
-          }
-        >
-          Sign Up
-        </NavLink>
+  to="/signup"
+  className={({ isActive }) =>
+    `px-4 py-1 rounded transition duration-300 ring-1 ring-cyan-400 ring-offset-2 shadow-lg shadow-cyan-500/30 ${
+      isActive
+        ? 'bg-cyan-400 text-black'
+        : 'hover:bg-cyan-400 hover:text-black text-white'
+    }`
+  }
+>
+  Sign Up
+</NavLink>
+
       </div>
     </nav>
   );
