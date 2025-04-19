@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import Navbar from '../components/Navbar'; // ✅ استدعاء الـ Navbar الجديد
+import Navbar from '../components/Navbar';
 
 export default function Auth() {
   const navigate = useNavigate();
@@ -13,7 +13,6 @@ export default function Auth() {
 
   const handleLogin = async () => {
     setError('');
-
     if (!email || !password) {
       setError('⚠️ Email and password are required.');
       return;
@@ -37,7 +36,6 @@ export default function Auth() {
         return;
       }
 
-      // localStorage.setItem('token', data.token);
       navigate('/generator');
     } catch (err) {
       setError('❌ Server error. Please try again later.');
@@ -45,12 +43,11 @@ export default function Auth() {
   };
 
   return (
-    <div className="min-h-screen bg-[#0f0f0f] text-white">
-      <Navbar /> {/* ✅ استبدلنا الـ Navbar القديم بالجديد */}
+    <div className="min-h-screen bg-[#0f0f0f] bg-[url('/dot-grid.svg')] bg-center bg-repeat text-white">
+      <Navbar />
 
-      {/* Login Card */}
-      <div className="flex items-center justify-center mt-12 px-4">
-        <div className="w-full max-w-md bg-[#1a1a1a] rounded-xl shadow-md p-8 text-center">
+      <div className="flex items-center justify-center pt-20 px-4">
+        <div className="w-full max-w-md bg-[#1a1a1a] rounded-xl shadow-lg border border-cyan-800 p-8 text-center hover:shadow-cyan-600/20 transition">
           <div className="text-cyan-400 text-4xl mb-6">🛡️</div>
           <h1 className="text-xl font-bold mb-6">Ready to bypass Windows Defender?</h1>
 
@@ -100,7 +97,7 @@ export default function Auth() {
           {/* Sign in */}
           <button
             onClick={handleLogin}
-            className="bg-[#333] text-white w-full py-2 rounded hover:bg-[#444] transition mb-2"
+            className="bg-cyan-500 hover:bg-cyan-600 text-black font-medium w-full py-2 rounded transition mb-2"
           >
             Sign in
           </button>
@@ -120,9 +117,9 @@ export default function Auth() {
             </Link>
             <span>
               Don’t have an account?{' '}
-              <a href="/signup" className="underline text-cyan-400 hover:text-white">
+              <Link to="/signup" className="underline text-cyan-400 hover:text-white">
                 Sign up for Bypass
-              </a>
+              </Link>
             </span>
           </div>
         </div>
