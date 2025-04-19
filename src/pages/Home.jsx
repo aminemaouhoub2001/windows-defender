@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import { FaWhatsapp, FaTelegram, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+
 
 export default function Home() {
   return (
@@ -129,10 +131,10 @@ export default function Home() {
         <br />for better defense strategies.
       </p>
       <div className="flex space-x-4 text-xl text-white">
-        <a href="https://wa.me/+212123456789" target="_blank" rel="noreferrer">🟢</a>
-        <a href="https://t.me/aminemaouhoub" target="_blank" rel="noreferrer">📨</a>
-        <a href="https://linkedin.com/in/aminemaouhoub" target="_blank" rel="noreferrer">🔗</a>
-        <a href="mailto:maouhoub.amine@etu.uae.ac.ma" target="_blank" rel="noreferrer">✉️</a>
+      <a href="https://wa.me/+212123456789" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
+      <a href="https://t.me/aminemaouhoub" target="_blank" rel="noreferrer"><FaTelegram /></a>
+      <a href="https://linkedin.com/in/aminemaouhoub" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+      <a href="mailto:maouhoub.amine@etu.uae.ac.ma" target="_blank" rel="noreferrer"><FaEnvelope /></a>
       </div>
     </div>
 
