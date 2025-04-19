@@ -130,12 +130,52 @@ export default function Home() {
         Educating professionals on <span className="text-cyan-400">malware evasion techniques</span>
         <br />for better defense strategies.
       </p>
-      <div className="flex space-x-4 text-xl text-white">
-      <a href="https://wa.me/+212123456789" target="_blank" rel="noreferrer"><FaWhatsapp /></a>
-      <a href="https://t.me/aminemaouhoub" target="_blank" rel="noreferrer"><FaTelegram /></a>
-      <a href="https://linkedin.com/in/aminemaouhoub" target="_blank" rel="noreferrer"><FaLinkedin /></a>
-      <a href="mailto:maouhoub.amine@etu.uae.ac.ma" target="_blank" rel="noreferrer"><FaEnvelope /></a>
-      </div>
+      <div className="flex space-x-4 text-xl mt-3">
+  {/* WhatsApp */}
+  <a
+    href="https://wa.me/+212123456789"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:scale-110 transition"
+    title="WhatsApp"
+  >
+    <img src="https://img.icons8.com/color/32/whatsapp--v1.png" alt="WhatsApp" />
+  </a>
+
+  {/* Telegram */}
+  <a
+    href="https://t.me/aminemaouhoub"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:scale-110 transition"
+    title="Telegram"
+  >
+    <img src="https://img.icons8.com/color/32/telegram-app--v1.png" alt="Telegram" />
+  </a>
+
+  {/* LinkedIn */}
+  <a
+    href="https://linkedin.com/in/aminemaouhoub"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:scale-110 transition"
+    title="LinkedIn"
+  >
+    <img src="https://img.icons8.com/color/32/linkedin.png" alt="LinkedIn" />
+  </a>
+
+  {/* Email */}
+  <a
+    href="mailto:maouhoub.amine@etu.uae.ac.ma"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="hover:scale-110 transition"
+    title="Email"
+  >
+    <img src="https://img.icons8.com/color/32/new-post.png" alt="Email" />
+  </a>
+</div>
+
     </div>
 
     {/* Quick Links */}
