@@ -8,7 +8,7 @@ export default function AuthNavbar() {
       <div className="flex items-center space-x-2">
         <img src="/windows-defender.svg" alt="logo" className="h-6" />
         <h1 className="text-lg font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent">
-          Evasion <span className="font-bold">Techniques</span>
+          MMI <span className="font-bold">Evader</span>
         </h1>
       </div>
 
