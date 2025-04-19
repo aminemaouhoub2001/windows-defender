@@ -121,9 +121,12 @@ export default function Home() {
     
     {/* Bloc gauche - translation vers la gauche */}
     <div className="transform translate-x-[-20px]">
-      <h1 className="text-xl font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent mb-1">
-        🛡️ Evasion <span className="text-purple-400">Techniques</span>
-      </h1>
+    <Link
+         to="/techniques"
+             className="bg-cyan-400 text-black px-6 py-2 rounded shadow-lg hover:bg-cyan-300 transition duration-300 
+             ring-2 ring-cyan-400 ring-offset-2 ring-offset-[#0f0f0f] hover:shadow-cyan-400/70 hover:ring-4"
+              >
+                    Explore Techniques</Link>
       <p className="text-sm mb-4 leading-relaxed">
         Educating professionals on <span className="text-cyan-400">malware evasion techniques</span>
         <br />for better defense strategies.
