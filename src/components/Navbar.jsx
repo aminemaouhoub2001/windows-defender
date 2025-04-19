@@ -48,24 +48,11 @@ export default function Navbar() {
         </NavLink>
 
         {/* Auth Buttons */}
-        <NavLink
-          to="/login"
-          className={({ isActive }) =>
-            `px-3 py-1 border rounded transition ${
-              isActive ? 'bg-gray-800 border-cyan-400' : 'hover:bg-gray-800'
-            }`
-          }
-        >
-          <span className="flex items-center gap-1">
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 16l4-4m0 0l-4-4m4 4H3" />
-            </svg>
-            Sign In
-          </span>
-        </NavLink>
+        
 
         <NavLink
-  to="/signup"
+  to="/Signin
+"
   className={({ isActive }) =>
     `px-4 py-1 rounded transition duration-300 ring-1 ring-cyan-400 ring-offset-2 shadow-lg shadow-cyan-500/30 ${
       isActive
@@ -74,7 +61,8 @@ export default function Navbar() {
     }`
   }
 >
-  Sign Up
+Sign In
+
 </NavLink>
 
       </div>
