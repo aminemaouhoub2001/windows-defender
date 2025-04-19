@@ -47,24 +47,19 @@ export default function Navbar() {
           Resources
         </NavLink>
 
-        {/* Auth Buttons */}
-        
-
+        {/* ✅ Sign In uniquement */}
         <NavLink
-  to="/Signin
-"
-  className={({ isActive }) =>
-    `px-4 py-1 rounded transition duration-300 ring-1 ring-cyan-400 ring-offset-2 shadow-lg shadow-cyan-500/30 ${
-      isActive
-        ? 'bg-cyan-400 text-black'
-        : 'hover:bg-cyan-400 hover:text-black text-white'
-    }`
-  }
->
-Sign In
-
-</NavLink>
-
+          to="/login"
+          className={({ isActive }) =>
+            `px-4 py-1 rounded transition duration-300 ring-1 ring-cyan-400 ring-offset-2 shadow-lg shadow-cyan-500/30 ${
+              isActive
+                ? 'bg-cyan-400 text-black'
+                : 'hover:bg-cyan-400 hover:text-black text-white'
+            }`
+          }
+        >
+          Sign In
+        </NavLink>
       </div>
     </nav>
   );
