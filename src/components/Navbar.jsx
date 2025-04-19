@@ -13,7 +13,7 @@ export default function Navbar() {
         <div className="flex items-center gap-1 sm:gap-2">
           <img src="/windows-defender.svg" alt="logo" className="h-6 sm:h-7" />
           <h1 className="text-base sm:text-lg font-bold bg-gradient-to-r from-cyan-400 via-purple-500 to-green-400 bg-clip-text text-transparent">
-            <span className="mr-0.5">MMI</span> <span className="font-bold">Evader</span>
+            <span className="mr-0.5">MM</span> <span className="font-bold">Evader</span>
           </h1>
         </div>
 
