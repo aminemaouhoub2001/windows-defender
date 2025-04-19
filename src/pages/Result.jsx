@@ -27,7 +27,7 @@ export default function Result() {
 
       {/* Result Content */}
       <div className="flex flex-col items-center justify-center py-16 px-4">
-        <h2 className="text-3xl font-bold mb-4 text-cyan-400">✅ Payload Generated Successfully!</h2>
+        <h2 className="text-3xl font-bold mb-4 text-cyan-400"> Payload Generated Successfully!</h2>
         <p className="text-gray-300 mb-6">Your undetectable payload is now ready.</p>
 
         <div className="bg-[#1a1a1a] p-6 rounded-lg shadow-lg max-w-md w-full text-center">

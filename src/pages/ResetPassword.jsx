@@ -28,7 +28,7 @@ export default function ResetPassword() {
         return;
       }
 
-      setSuccess('✅ Password updated successfully.');
+      setSuccess(' Password updated successfully.');
     } catch (err) {
       setError('❌ Server error.');
     }
