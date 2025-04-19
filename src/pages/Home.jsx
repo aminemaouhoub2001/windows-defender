@@ -60,7 +60,7 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {[
-            { icon: "🧪", title: "Local Shell Injection", desc: "Inject code directly into local processes." },
+            { icon: "", title: "Local Shell Injection", desc: "Inject code directly into local processes." },
             { icon: "🧬", title: "Remote DLL Injection", desc: "Inject malicious DLLs remotely." },
             { icon: "📡", title: "Remote Shellcode", desc: "Inject raw shellcode into other processes." },
             { icon: "🔐", title: "Registry Injection", desc: "Persistence via malicious registry entries." }
