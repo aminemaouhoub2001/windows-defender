@@ -8,6 +8,8 @@ import VerifyEmail from './pages/VerifyEmail';
 import ForgotPassword from './pages/ForgotPassword';
 import ResetPassword from './pages/ResetPassword';
 import Home from './pages/Home';
+import MyDashboard from './pages/MyDashboard';
+
 
 const Placeholder = () => <div className="text-white p-10">Coming Soon...</div>;
 
@@ -24,6 +26,8 @@ function App() {
         <Route path="/verify-email" element={<VerifyEmail />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/dashboard" element={<MyDashboard />} />
+
 
         {/* 🔧 Routes temporairement ajoutés pour éviter le crash */}
         <Route path="/techniques" element={<Placeholder />} />
