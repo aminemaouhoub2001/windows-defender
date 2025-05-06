@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import Navbar from '../components/AuthNavbar';
 
-
 export default function Auth() {
   const navigate = useNavigate();
   const [email, setEmail] = useState('');
@@ -37,7 +36,12 @@ export default function Auth() {
         return;
       }
 
-      navigate('/generator');
+      // Store token and user
+      localStorage.setItem('token', data.token);
+      localStorage.setItem('user', JSON.stringify(data.user));
+
+      // ✅ Redirect to dashboard after login
+      navigate('/dashboard');
     } catch (err) {
       setError('❌ Server error. Please try again later.');
     }
